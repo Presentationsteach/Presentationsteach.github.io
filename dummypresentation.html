@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR A Level Computer Science - Data Structures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .slide {
+            display: none;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .active {
+            display: block;
+        }
+        .slide-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .slide-content {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>OCR A Level Computer Science - Data Structures</h1>
+
+    <!-- Slide 1 - Arrays -->
+    <div class="slide active" id="slide1">
+        <h2 class="slide-title">Arrays</h2>
+        <div class="slide-content">
+            <p><strong>Definition:</strong> Arrays are a collection of elements of the same type, stored in contiguous memory locations.</p>
+            <ul>
+                <li><strong>Static Size:</strong> Once created, their size cannot be changed.</li>
+                <li><strong>Mutable:</strong> Elements can be modified after creation.</li>
+                <li><strong>Indexing:</strong> Elements are accessed via an index (starting from 0).</li>
+            </ul>
+            <p><strong>Use Cases:</strong> Efficient when you know the fixed number of elements.</p>
+            <p><strong>Code Example:</strong></p>
+            <pre>
+# Python-like syntax
+arr = [1, 2, 3, 4]
+arr[0] = 10  # Mutable: we can change the value at index 0
+print(arr)    # Output: [10, 2, 3, 4]
+            </pre>
+        </div>
+    </div>
+
+    <!-- Slide 2 - Tuples -->
+    <div class="slide" id="slide2">
+        <h2 class="slide-title">Tuples</h2>
+        <div class="slide-content">
+            <p><strong>Definition:</strong> An ordered collection of elements, can contain different types.</p>
+            <ul>
+                <li><strong>Static Size:</strong> Once created, their size cannot be changed.</li>
+                <li><strong>Immutable:</strong> Cannot be modified after creation.</li>
+                <li><strong>Accessing Elements:</strong> Indexed, just like arrays.</li>
+            </ul>
+            <p><strong>Use Cases:</strong> Ideal for constant data that shouldn't be modified.</p>
+            <p><strong>Code Example:</strong></p>
+            <pre>
+# Python-like syntax
+my_tuple = (1, "hello", 3.5)
+# my_tuple[0] = 10  # Error: Tuples are immutable
+print(my_tuple)  # Output: (1, "hello", 3.5)
+            </pre>
+        </div>
+    </div>
+
+    <!-- Slide 3 - Lists -->
+    <div class="slide" id="slide3">
+        <h2 class="slide-title">Lists</h2>
+        <div class="slide-content">
+            <p><strong>Definition:</strong> Similar to arrays but more flexible, storing elements in an ordered collection.</p>
+            <ul>
+                <li><strong>Dynamic Size:</strong> The number of elements can change over time.</li>
+                <li><strong>Mutable:</strong> Elements can be modified or removed.</li>
+                <li><strong>Heterogeneous:</strong> Can store different types of data.</li>
+            </ul>
+            <p><strong>Use Cases:</strong> When the number of elements can vary and you need flexibility.</p>
+            <p><strong>Code Example:</strong></p>
+            <pre>
+# Python-like syntax
+my_list = [1, 2, 3, 4]
+my_list.append(5)  # Adding an element dynamically
+my_list[2] = 10  # Modifying an element (mutable)
+print(my_list)  # Output: [1, 2, 10, 4, 5]
+            </pre>
+        </div>
+    </div>
+
+    <!-- Slide 4 - Multidimensional Arrays -->
+    <div class="slide" id="slide4">
+        <h2 class="slide-title">Multidimensional Arrays</h2>
+        <div class="slide-content">
+            <p><strong>Definition:</strong> Arrays of arrays, allowing for the creation of matrices or higher-dimensional structures.</p>
+            <ul>
+                <li><strong>Static Size:</strong> The size is fixed once created, though inner arrays may vary in some languages.</li>
+                <li><strong>Mutable:</strong> Elements within the multidimensional array can be modified.</li>
+                <li><strong>Indexed:</strong> Accessed via multiple indices (e.g., `array[row][column]`).</li>
+            </ul>
+            <p><strong>Use Cases:</strong> Useful for representing matrices or tabular data.</p>
+            <p><strong>Code Example:</strong></p>
+            <pre>
+# Python-like syntax
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matrix[1][2] = 10  # Modifying an element (mutable)
+print(matrix)  # Output: [[1, 2, 3], [4, 5, 10], [7, 8, 9]]
+            </pre>
+        </div>
+    </div>
+
+    <!-- Slide 5 - Records (Structs/Dictionaries) -->
+    <div class="slide" id="slide5">
+        <h2 class="slide-title">Records (Structs/Dictionaries)</h2>
+        <div class="slide-content">
+            <p><strong>Definition:</strong> A collection of fields (attributes), each with a specific type and name, used to represent real-world entities.</p>
+            <ul>
+                <li><strong>Static Structure:</strong> The structure of the record is typically fixed.</li>
+                <li><strong>Mutable:</strong> Fields within a record can be modified.</li>
+                <li><strong>Heterogeneous:</strong> Records can store fields of different types.</li>
+            </ul>
+            <p><strong>Use Cases:</strong> Representing complex data with multiple attributes (e.g., a student or a product).</p>
+            <p><strong>Code Example:</strong></p>
+            <pre>
+# Python-like syntax
+student = {"name": "Alice", "age": 20, "grade": "A"}
+student["age"] = 21  # Mutable: we can modify the age field
+print(student)  # Output: {'name': 'Alice', 'age': 21, 'grade': 'A'}
+            </pre>
+        </div>
+    </div>
+
+    <!-- Slide 6 - Comparison Summary -->
+    <div class="slide" id="slide6">
+        <h2 class="slide-title">Comparison Summary</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Structure</th>
+                        <th>Static/Dynamic</th>
+                        <th>Mutable/Immutable</th>
+                        <th>Use Cases</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Array</td>
+                        <td>Static</td>
+                        <td>Mutable</td>
+                        <td>Efficient for fixed size data</td>
+                    </tr>
+                    <tr>
+                        <td>Tuple</td>
+                        <td>Static</td>
+                        <td>Immutable</td>
+                        <td>For constant data that shouldn't change</td>
+                    </tr>
+                    <tr>
+                        <td>List</td>
+                        <td>Dynamic</td>
+                        <td>Mutable</td>
+                        <td>When the number of elements can change</td>
+                    </tr>
+                    <tr>
+                        <td>Multidimensional Array</td>
+                        <td>Static</td>
+                        <td>Mutable</td>
+                        <td>For matrix-like or tabular data</td>
+                    </tr>
+                    <tr>
+                        <td>Record (Struct/Dict)</td>
+                        <td>Static</td>
+                        <td>Mutable</td>
+                        <td>When dealing with structured data</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="buttons">
+        <button class="btn" onclick="changeSlide(-1)">Previous</button>
+        <button class="btn" onclick="changeSlide(1)">Next</button>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function changeSlide(direction) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+</script>
+
+</body>
+</html>
